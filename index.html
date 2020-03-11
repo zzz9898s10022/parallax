@@ -1,138 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
-        body {
-            margin: 0;
-            height: 150vh;
+      html{
+        scroll-behavior: smooth;
+      }
+      body{
+        margin: 0;
+      }
+      #all{
+        width: 80%;
+          /* height: 300vh; */
+        /* min-width: 600px; */
+        /* 如果開啟min-width，avator會跑掉 */
+        margin: 0 auto;
+        
+
         }
 
-        .para_container {
-            width: 100%;
-            height: 100vh;
-            background-image: url(https://images.pexels.com/photos/445141/pexels-photo-445141.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-            background-attachment: fixed;
+      #picA{
+        background-image: url(jpg/picA.jpg);
+        width: 100%;
+        height: 50vh;
+        background-size: cover;
+        background-position: top;
+        padding-top: 50vh;
         }
-
-        .mask {
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
+      #avator{
+        background-image: url(jpg/fish_logo.jpg);
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        background-size: cover;
+        box-shadow: inset 5px 5px 5px 5px lightblue;
+        position: fixed;
+        top: 50px;
+        left: calc(10% + 20px);
+      }
+      #navbar{
+        background-color: blue;
+        float: left;
+        right: calc(10% + 50px);
+        top:80px ;
+        position: fixed;       
+    
+      }
+   
+      #label{
+        /* background-color: black; */
+        width: 100%;
+        /* height: 25vh; */
+        /* padding-top: 25vh; */
+        height: calc(25vh + 50px);
+        padding-top: calc(25vh - 50px); 
+        /* 1.要讓boxA置中，先padding 25vh讓格子先到黑色的中心
+           2.可以發現雖然格子上緣到中心，但整體並不對稱，所以padding
+           要扣掉格子的一半距離，才能使格子完整對齊中心 
+           3.扣完之後可以發現格子垂直對齊中心，但下方又因為扣掉格子的一半
+           導致labelA少了格子一半的高度，因此height要將格子一半的高度加
+           回來*/
+      }
+      #box{
+        /* background-color: coral; */
+        width: 200px;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      #picB{
+        background-image: url(jpg/picB.jpg);
+        width: 100%;
+        height: 50vh;
+        background-size: cover;
+        background-position: center;
+        padding-top: 50vh;
+      }
+      /* #label{
+        width: 100%;
+        height: calc(25vh + 50px);
+        padding-top: calc(25vh - 50px);
+      } */
+      /* #box{
+        width: 200px;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+      } */
+      #picC{
+        background-image: url(jpg/picC.jpg);
+        width: 100%;
+        height: 50vh;
+        background-size: cover;
+        background-position: bottom;
+        padding-top: 50vh;
+      }
+      /* #label{
+        width: 100%;
+        height: calc(25vh + 50px);
+        padding-top: calc(25vh - 50px);
+      } */
+      /* #box{
+        width: 200px;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+      } */
+      .label_color{
+        background-color:rgba(0, 0, 0, 0.5);
+      }
+      .box_unit{
+        background-color:rgba(256,256,256,0.4);
+      }
+      .box_unit:hover{
+        background-color: greenyellow;
+        transition: 1.5s;
+      }
+      .box_unit:active{
+        background-color:plum;
+        transition: 0.5s;
+      }
+      .section{
+        width: 70px;
+        padding:10px 10px ;
+        background-color: orange;
+        border:2px dotted gray;
+        float: left;    
+      }
+      .section:hover{
+        background-color: rosybrown;
+        transition: 0.5s;
+      }
+      .section:active{
+        background-color: slateblue;
+        transition: 0.8s;
+      }
+      /* 因為三個基本圖層中都含有label&box，所以可以將他們分別歸成兩類，
+         方便同時更改，但使用時要注意，不能有#個別指定，因為個別指定的命令大於
+         分類的命令*/
     </style>
+
 </head>
 
 <body>
-    <ul class="nav justify-content-end">
-        <li class="nav-item">
-            <a class="nav-link active" href="#">LinkA</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">LinkB</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">LinkC</a>
-        </li>
-    </ul>
-    <main>
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-4 ">
-                        <div class="card mx-auto">
-                            <img src="https://3.bp.blogspot.com/-1mzBwjSbqmY/VTC8ygY3KII/AAAAAAAAYDE/eaMYLv5SkpM/s1600/1.png"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">bootstrap</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4 ">
-                        <div class="card mx-auto">
-                            <img src="https://3.bp.blogspot.com/-1mzBwjSbqmY/VTC8ygY3KII/AAAAAAAAYDE/eaMYLv5SkpM/s1600/1.png"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">bootstrap</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4 ">
-                        <div class="card mx-auto">
-                            <img src="https://3.bp.blogspot.com/-1mzBwjSbqmY/VTC8ygY3KII/AAAAAAAAYDE/eaMYLv5SkpM/s1600/1.png"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">bootstrap</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <div class="parallax ">
-        <div class="para_container">
-            <div class="mask">
-                <button type="button" class="btn btn-danger d-none d-md-block">Danger</button>
-            </div>
-
-
+ <div id="all">
+    <div id="avator"></div> 
+    <div id="navbar">
+      <a href="#picA"><div id="navbarL" class="section">A</div></a>
+      <a href="#picB"><div id="navbarM" class="section">B</div></a>
+      <a href="#picC"><div id="navbarR" class="section">C</div></a>
+  </div>
+        <div id="picA">     
+          <div id="label" class="label_color">    
+            <div id="box" class="box_unit"></div>
+          </div>
         </div>
-    </div>
-    <main>
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-6 order-1 order-md-0">
-                        <img src="https://3.bp.blogspot.com/-1mzBwjSbqmY/VTC8ygY3KII/AAAAAAAAYDE/eaMYLv5SkpM/s1600/1.png"
-                            class="card-img-top " alt="...">
-                        <!-- 如果遇到圖片的高度低於文字高度，且設定height:100%時會使圖片變形，則可以考慮將img改成利用background-image模式，雖然一樣會變形，但差異比較小，可以自行斟酌採用p.s.使用background時，記得設定高度及寬度 -->
-                    </div>
-                    <div class="col-12 col-md-6 ">
-                        <h5 class="card-title">bootstrap</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-                            aperiam ut id quaerat beatae obcaecati exercitationem esse, aliquid modi, at nulla
-                            distinctio explicabo quae maxime saepe nobis quis nihil minima cupiditate. Minus, recusandae
-                            animi. Necessitatibus odit iusto vitae placeat quis nisi magni voluptas
-                            reiciendis rem mollitia?</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="p-4 mx-auto text-success">
-                    此頁面內容僅為全端與phthon資料探工程師養成班使用
-                </div>
-            </div>
+        <div id="picB">
+          <div id="label" class="label_color">
+            <div id="box" class="box_unit"></div>
+          </div>
         </div>
-    </footer>
+        <div id="picC">
+          <div id="label" class="label_color">
+            <div id="box" class="box_unit"></div>
+          </div>
+        </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+ </div>
+
 </body>
-
 </html>
