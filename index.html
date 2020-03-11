@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            height: 150vh;
+        }
+
+        .para_container {
+            width: 100%;
+            height: 100vh;
+            background-image: url(https://images.pexels.com/photos/445141/pexels-photo-445141.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+            background-attachment: fixed;
+        }
+
+        .mask {
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">LinkA</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">LinkB</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">LinkC</a>
+        </li>
+    </ul>
+    <main>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-4 ">
+                        <div class="card mx-auto">
+                            <img src="https://3.bp.blogspot.com/-1mzBwjSbqmY/VTC8ygY3KII/AAAAAAAAYDE/eaMYLv5SkpM/s1600/1.png"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">bootstrap</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 ">
+                        <div class="card mx-auto">
+                            <img src="https://3.bp.blogspot.com/-1mzBwjSbqmY/VTC8ygY3KII/AAAAAAAAYDE/eaMYLv5SkpM/s1600/1.png"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">bootstrap</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 ">
+                        <div class="card mx-auto">
+                            <img src="https://3.bp.blogspot.com/-1mzBwjSbqmY/VTC8ygY3KII/AAAAAAAAYDE/eaMYLv5SkpM/s1600/1.png"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">bootstrap</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="parallax ">
+        <div class="para_container">
+            <div class="mask">
+                <button type="button" class="btn btn-danger d-none d-md-block">Danger</button>
+            </div>
+
+
+        </div>
+    </div>
+    <main>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 order-1 order-md-0">
+                        <img src="https://3.bp.blogspot.com/-1mzBwjSbqmY/VTC8ygY3KII/AAAAAAAAYDE/eaMYLv5SkpM/s1600/1.png"
+                            class="card-img-top " alt="...">
+                        <!-- 如果遇到圖片的高度低於文字高度，且設定height:100%時會使圖片變形，則可以考慮將img改成利用background-image模式，雖然一樣會變形，但差異比較小，可以自行斟酌採用p.s.使用background時，記得設定高度及寬度 -->
+                    </div>
+                    <div class="col-12 col-md-6 ">
+                        <h5 class="card-title">bootstrap</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+                            aperiam ut id quaerat beatae obcaecati exercitationem esse, aliquid modi, at nulla
+                            distinctio explicabo quae maxime saepe nobis quis nihil minima cupiditate. Minus, recusandae
+                            animi. Necessitatibus odit iusto vitae placeat quis nisi magni voluptas
+                            reiciendis rem mollitia?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="p-4 mx-auto text-success">
+                    此頁面內容僅為全端與phthon資料探工程師養成班使用
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
